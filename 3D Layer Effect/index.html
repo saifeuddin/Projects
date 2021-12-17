@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans|Nova+Mono|Roboto+Condensed" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+
+
+    <style>
+        *
+        {   
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .layers {
+            position: relative;
+            top: 50px;
+            min-height: 638px;
+            max-width: 360px;
+            margin: 60px auto;
+            /* border: 1px solid #000; */
+        }
+        
+        .layers img {
+            position: absolute;
+            max-width: 100%;
+            height: 100%;
+            
+            transition: all ease 1600ms;
+            transform-style: preserve-3d;
+        }
+        
+        .layers:hover img {
+        transform:  perspective(600px)
+                    rotateX(50deg) rotateY(20deg) rotateZ(-25deg)
+                    translateX(34px) translateY(0px) translateZ(180px);
+        }
+        .layers .mid {
+            width: 320px;
+            left: 20px;
+        }
+        .layers:hover .mid {
+            transform: perspective(600px) rotateX(50deg) rotateY(20deg) rotateZ(-25deg)
+            translateX(34px) translateY(0px) translateZ(220px);
+        }
+
+
+        .layers .top {
+            width: 300px;
+            left: 30px;
+            top: -5px;
+        }
+        .layers:hover .top {
+            transform: perspective(600px) rotateX(50deg) rotateY(20deg) rotateZ(-25deg)
+            translateX(34px) translateY(0px) translateZ(260px);
+        }
+
+        
+        .layers .tippy {
+            width: 280px;
+            left: 40px;
+            top: -150px;
+        }
+        .layers:hover img.tippy {
+            transform: perspective(600px) rotateX(50deg) rotateY(20deg) rotateZ(-25deg)
+            translateX(34px) translateY(0px) translateZ(260px);
+        }
+    </style>
+
+
+    <style>
+        .coffee{
+            position: relative;
+            /* border: 1px solid #000; */
+            height: 600px;
+            width: 800px;
+            margin: 50px auto;
+            background-color:rgb(243, 243, 246);
+            box-shadow: 
+                        inset 5px 5px 3px rgb(212, 192, 192),
+                        5px 5px 3px rgb(167, 138, 138),
+                        inset -5px -5px 3px rgb(218, 206, 206)
+                        ;
+        }
+        .coffee .handle{
+            position: absolute;
+            top: 37%;
+            left: 54%;
+            /* border: 1px solid #000; */
+
+            height: 50px;
+            width: 125px;
+            background-color: white;
+            border-radius: 50px;
+            box-shadow: 5px 0px 1px rgba( 200, 200, 200, 0.8);
+            background: linear-gradient(180deg ,
+            rgb(200,200,200) 5%,
+            rgb(255,255,255) 50%,
+            rgb(200,200,200) 90%
+            );
+        }
+        .coffee .cup{
+            position: relative;
+            height: 462px;
+            width: 462px;
+            z-index: 3;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 10px 10px 7px rgb(49, 49, 49, .1);
+            background: radial-gradient( 50% 50%,
+                        rgb(14, 7,0) 65%,
+                        rgb(184, 144 , 18) 75%,
+                        rgb(129, 129 , 129) 75%,
+                        #fff 95%,
+                        rgb(161, 161 , 161) 100%
+            );
+        }
+        .coffee .brew{
+            position: absolute;
+            top: 39%;
+            left: 70px;
+            transform: translateY(-50%);
+            width: 316px;
+            height: 316px;
+            z-index: 4;
+            box-shadow: 5px 5px 0 0 rgba(252, 232, 185, 0.5);
+            border-radius: 50%;
+              background-image: linear-gradient(140deg, rgb(26, 24, 24) 0%, rgb(78, 63, 47) 100%);
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+
+    <!-- =========================
+            3D LAYER EFFECT
+    ========================= -->
+
+        <h1> 3D Layers</h1>
+            <p><strong>Instructions:</strong> Create a 3D layer effect with CSS3!</p>
+
+        <section>
+            <h4>3D Layer Effect</h4>
+
+            <div class="layers">
+                <img src="img/back.svg" alt="back layer" class="back">
+                <img src="img/mid.svg" alt="mid layer" class="mid">
+                <img src="img/top.svg" alt="top layer" class="top">
+                <img src="img/tippytop.svg" alt="tippy top layer" class="tippy">                    
+            </div>
+
+        </section>
+
+
+
+        <br>
+        <br>
+        <br>
+
+
+
+
+        <!-- =========================
+                   COFFEE CUP!
+        =========================  -->
+
+        <h1> CSS3 Coffee Cup</h1>
+            <p><strong>Instructions:</strong> Create a realistic CSS3-only coffee cup!</p>
+
+                <section>
+
+                    <h4>Coffee Cup</h4>
+                    <div class="coffee">
+                        <div class="handle"></div>
+                        <div class="cup"></div>
+                        <div class="brew"></div>
+                    </div>
+
+                </section>
+
+
+
+
+</body>
+</html>

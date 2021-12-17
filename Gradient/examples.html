@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body {
+        padding: 1.5rem;
+        }
+
+        .gradient-pattern{
+            border: 2px solid #1ed60d;
+
+            background-color: rgb(255, 255, 255);
+            background-image: linear-gradient(
+                            45deg,
+                            #333 25%,
+                            transparent 25%,
+                            transparent 75%,
+                            #333 75%,
+                            #333
+                            ),
+
+         linear-gradient(
+        -45deg,
+        #333 25%,
+        transparent 25%,
+        transparent 75%,
+        #333 75%,
+        #333
+        );
+
+
+        background-size: 50px 50px;
+        height: 250px;
+        }
+
+    </style>
+
+
+
+    <style>
+        .gradient-pattern2 {
+            border: 1px solid #000;
+        background: linear-gradient(
+            135deg, 
+                #333 25%, transparent 25%) -50px 0
+        ,
+        linear-gradient(225deg, #333 25%, transparent 25%) -50px 0,
+        linear-gradient(315deg, #333 25%, transparent 25%)
+        ,
+        linear-gradient(45deg, #333 25%, transparent 25%)
+        ;
+        background-size: 100px 100px;
+        background-color: #ff8a00;
+        height: 250px;
+        }
+    </style>
+
+
+    <style>
+        .gradient-pattern3{
+            height: 250px;
+            background-size: 20px 20px;
+            background-color: #eaeaea;
+            
+            /* background-repeat: no-repeat; */
+
+            background-image: repeating-linear-gradient(
+                45deg,rgba(0, 191, 255, 0.5),
+                rgba(0, 191, 255, 0.5) 1px,
+                transparent 1px,
+                transparent 15px
+            ),
+            repeating-linear-gradient(
+                -45deg,rgba(255, 105, 180, 0.5),
+                rgba(255,105, 180, 0.5) 1px,
+                transparent 1px,
+                transparent 15px
+            )
+            ;
+        }
+    </style>
+
+
+    <style>
+        body {
+        padding: 1.5rem;
+        }
+        .card {
+        margin: 2rem auto;
+        width: 350px;
+        /* border: 1px solid #000; */
+        }
+        .card .gradient-border{
+            padding: 10px;
+            border-radius: 17px;
+            background-image: linear-gradient(45deg, #ff8a00, #e52e71);
+        }
+        .content-wrapper {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+            padding: 35px;
+            text-align: center;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    
+        <div class="gradient-pattern"></div>
+        <br>
+        <br>
+        <div class="gradient-pattern1"></div>
+        <br>
+        <br>
+        <div class="gradient-pattern2"></div>
+        <br>
+        <br>
+        <div class="gradient-pattern3"></div>
+        <br>
+        <br>
+
+        <div class="card">
+            <div class="gradient-border">
+                <div class="content-wrapper">Hey, nice border!</div>
+            </div>
+        </div>
+
+
+</body>
+</html>

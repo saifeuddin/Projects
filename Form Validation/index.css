@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #9b59b6;
+    font-family: 'Open Sans', sans-serif;
+
+    min-height: 100vh;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 400px;
+    max-width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+    overflow: hidden;
+
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+
+.container .header {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #cf9d9d;
+    padding: 20px 40px;
+}
+
+.container .header h2{
+    margin: 0;
+}
+
+
+.form{
+    padding: 30px 40px;
+}
+
+
+.form .form-control{
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+}
+
+
+.form .form-control label{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+
+.form .form-control input{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #e4d8d8;
+    font-family: inherit;
+    font-size: 14px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.form .form-control input:focus{
+    outline: none;
+    border: 2px solid #777;
+}
+
+.form .form-control.success input{
+    border: 2px solid #2ecc71;
+}
+
+.form .form-control.error input{
+    border: 2px solid #ff1900;
+}
+
+
+.form-control i {
+    visibility: hidden;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+}
+
+.form-control.success i.fa-check-circle {
+    color: #5900ff;
+    visibility: visible;
+}
+
+
+.form-control.error i.fa-exclamation-circle {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.form-control small {
+    color: #e03623;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.form-control.error small {
+    visibility: visible;
+}
+
+.form button {
+    background-color: #8e44ad;
+    border: 2px solid #8e44ad;
+    color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+    display: block;
+    border-radius: 4px;
+}
+
+
+.form button:hover{
+    background-color: #6e3a85;
+    border: 3px solid #000;
+}

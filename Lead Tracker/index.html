@@ -1,0 +1,101 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            text-decoration: none;
+        }
+        body{
+            background-color:#fffaf6 ;
+            height: 200px;
+            width: 400px;
+        }
+        
+        div{
+            background-color: azure;
+            width: min-content;
+            padding: 20px;
+        }
+
+
+        #input-el{
+            border:none;
+            display: block;
+            background-image: linear-gradient(160deg, rgb(231, 217, 217),rgb(107, 112, 179));
+            width: 300px;
+            height: 40px;
+            font-size: 20px;
+        }
+
+        
+        #input-el:focus{
+            background-image: none;
+            outline: none;
+            border: 2px solid #000;
+        }
+        
+        div:focus-within{
+            background-image: linear-gradient(rgb(156, 180, 123), rgb(229, 229, 233));
+            border: 1px solid #000;
+        }
+        
+        
+        
+        #ul-el{
+            list-style-type: square;
+            font-size: 20px;
+        }
+        div .btn{
+            background-image: linear-gradient(20deg, rgb(132, 199, 120), #5353a5);
+            outline: none;
+            padding: 9px;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            position: relative;
+        }
+        div #button-el2::after{
+            content: "Double Click";
+            position: absolute;
+            top: 10px;
+            left: 3px;
+            visibility: hidden;        
+        }
+        div #button-el2:hover span{
+            visibility: hidden;
+        }
+        
+        div #button-el2:hover::after{
+            visibility: visible;;        
+        }
+    </style>
+
+    <script defer  src="index.js"></script>
+
+</head>
+<body >
+
+    <div>
+        <input type="text" name="" placeholder="Input any URL" class="" id="input-el"> 
+        <br>
+        <br>
+        <button id="button-el" class="btn">Save Input</button>
+        <button id="buttonS" class="btn">Save Tab</button>
+        <button id="button-el2" class="btn"> 
+            <span>
+                Delete Input
+            </span>
+        </button>
+        <ul id="ul-el">
+        </ul>
+    </div>
+
+
+
+</body>
+</html>

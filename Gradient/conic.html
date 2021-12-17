@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body { background: black; }
+
+        h2 { 
+            margin: auto; 
+            margin-top: 60px; 
+            width: 370px; 
+            text-align: right; 
+            background: yellow; 
+            padding-right: 10px; }
+
+        .msg {
+            margin-top: 120px;
+            text-align: center; }
+
+        .patterns {
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        border: 40px white solid;
+        }
+
+        
+        #second{
+            background: conic-gradient(
+            yellow 40deg
+            , 
+           blue  40deg
+            , 
+            blue 45deg
+            ,  
+            transparent 45deg)
+            ,
+            conic-gradient(transparent 135deg
+            ,
+            blue 135deg
+             , 
+             blue 140deg
+             , 
+             transparent 140deg
+             ) 
+             ;
+
+            /* background-repeat: no-repeat; */
+            background-size: 60px 60px;
+            background-color: white;
+            }
+    </style>
+</head>
+<body>
+
+            <div class="intro">
+                <h1>Conic gradient patterns</h1>    
+                    <p>
+                        Conic gradients create "ray-like shapes". Like linear and radial gradients, conic gradients can be used to" create geometric patterns".
+                    </p>
+            </div>
+            <div class="exm">
+                <h2>❷</h2>
+                <div class="patterns" id="second">
+                        <span hidden class="msg">
+                            If there's no pattern, try another browser, the current one doesn't support conic-gradient
+                        </span>
+                </div>
+            </div>
+
+    
+</body>
+</html>

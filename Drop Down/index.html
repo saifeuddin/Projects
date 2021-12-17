@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Down Menu </title>
+
+    <style>
+        body{
+            margin: 0;
+        }
+        .header{
+            width: 400px;
+            height: auto;
+            margin: 20px auto;
+            background-color: #F3F3F3;
+            padding: .5rem;
+
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+
+            border: 1px solid #000;
+        }
+
+        .link{
+            background: none;
+            border: none;
+            padding: 0;
+            color: #777;
+            text-decoration: none;
+            font-family: inherit;
+            font-size: calc(16px + 3px);
+            cursor: pointer;
+        }
+        .dropdown.active > .link,
+        .link:hover{
+            color: #000;
+            font-weight: bold;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            left: 0;
+            top: calc(100% + .25rem);
+
+            background-color: #fff;
+            padding: .75rem;
+            border-radius: .25rem;
+            box-shadow: 0 2px 15px 0 rgba(0,0,0,.1);
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+            pointer-events: none;
+        }
+
+        .dropdown.active > .link + .dropdown-menu{
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="dropdown" data-dropdown>
+            <button class="link" data-dropdown-button>Information</button>
+            <div class="dropdown-menu">
+                DropDown Content
+            </div>
+        </div>
+        <a href="#" class="link">Pricing</a>
+        <button class="link" data-dropdown-button>Login</button>
+    </div>
+
+
+    <script>
+        document.addEventListener('click', e => {
+            const isDropDownButton = e.target.matches('[data-dropdown-button]')
+            let currentDropDown
+
+            if(isDropDownButton) {
+                currentDropDown = e.target.closest('[data-dropdown]')
+                currentDropDown.classList.toggle('active')
+                console.log(currentDropDown)
+            }
+
+
+            if(!isDropDownButton && e.target.closest('[data-dropdown]') !== null) {
+                return
+            }
+
+
+            document.querySelectorAll("[data-dropdown].active").forEach(a => {
+                if(a === currentDropDown) return
+                    a.classList.remove('active')
+            })
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .header {
+            height: 15%;
+            background-color: red;
+
+        }
+
+        .links {
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: white;
+            font-weight: bolder;
+            font-size: 20px;
+        }
+        
+        .content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sidebar {
+            background-color: green;
+            width: 15vh;
+        }
+
+        .left {
+            background-color: ;
+        }
+
+        .button {
+            align-self: center;
+            border: 1px solid #000;
+        }
+
+        .right {
+            background-color: ;
+        }
+
+        .footer {
+            transform: translateY(100%);
+            height: 15vh;
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+
+
+
+    <div id="" class="header"> 
+        <div class="links">
+            <div class="link"> Links 1 </div>
+            <div class="link"> Links 2 </div>
+            <div class="link"> Links 3 </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="sidebar left"> </div>
+        <button class="button"> Reverse </button>
+        <div class="sidebar right"> </div>
+    </div>
+
+    <div class="footer"> </div>
+
+
+    <script defer src="index.js"></script>
+
+</body>
+</html>

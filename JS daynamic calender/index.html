@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Glassmorphism Calender/ Js Dynamic Calender </title>
+    <link rel="stylesheet" href="dycalendar.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    
+    <section>
+        <dev class="box">
+            <div class="container">
+                <div id="dycalendar"></div>
+            </div>
+        </dev>
+    </section>
+
+    <script src="dycalendar.js"></script>
+    <script>
+        dycalendar.draw({
+            target: '#dycalendar',
+            type: 'month',
+            dayformat: 'full',
+            monthformat: 'full',
+            highlighttargetdate: true,
+            prevnextbutton: 'show'
+        });
+
+    </script>
+
+</body>
+</html>

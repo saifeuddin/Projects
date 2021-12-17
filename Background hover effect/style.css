@@ -1,0 +1,52 @@
+body {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    animation: changeColor 5s linear infinite;
+}
+
+@keyframes changeColor {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+span {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00ff0a;
+    transform: scale(0.1);
+    box-shadow: 0 0 10PX #00ff0a, 0 0 20PX #00ff0a, 0 0 40PX #00ff0a, 0 0 60PX #00ff0a, 0 0 80PX #00ff0a, 0 0 100PX #00ff0a;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: 2s;
+}
+
+span:hover::before {
+    transform: scale(1);
+    transition: 0s;
+}
