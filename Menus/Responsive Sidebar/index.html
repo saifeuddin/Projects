@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .sidenav {
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color: #f1f1f1;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+        }
+
+
+        .sidenav a {
+            display: block;
+            color: black;
+            padding: 16px;
+            text-decoration: none;
+        }
+
+
+        .sidenav a.active {
+            color: white;
+            background-color: #04AA6D;
+        }
+
+        .sidenav a:hover:not(.active) {
+            color: white;
+            background-color: #04AA6D;
+        }
+
+        div.content {
+            margin-left: 200px;
+            padding: 1px 16px;
+            height: 1000px;
+        }
+
+
+
+        @media screen and (max-width: 700px) {
+            .sidenav {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .sidenav a {
+                float: left;
+            }
+            div.content {
+                margin-left: 0;
+            }
+        }
+
+
+
+        @media screen and (max-width: 400px) {
+            .sidenav a {
+                text-align: center;
+                float: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <h3>
+        Learn how to create a responsive side navigation menu with CSS.
+    </h3>
+
+    <!-- The Sidebar -->
+
+    <div class="sidenav">
+        <a href="#home" class="active"> Home </a>
+        <a href="#news"> News </a>
+        <a href="#contact"> Contact </a>
+        <a href="#about"> About </a>
+    </div>
+
+    <!-- Page Content -->
+    <div class="content">
+        <h4>
+            Responsive Sidebar Example
+        </h4>
+        <p>
+            This example use media queries to transform the
+             sidebar to a top navigation bar when the screen
+            size is 700px or less.
+            We have also added a media query for screens that
+            are 400px or less, which will vertically stack and
+            center the navigation links.
+        </p>
+        <b>
+            Resize the browser window to see the effect.
+        </b>
+    </div>
+
+
+</body>
+</html>

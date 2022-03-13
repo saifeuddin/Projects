@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        .tab {
+            float: left;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            width: 30%;
+            height: 300px;
+        }
+        .tab button {
+            display: block;
+            font-size: 17px;
+            background-color: inherit;
+            padding: 22px 16px;
+            color: black;
+            width: 100%;
+            text-align: center;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: .5s;
+        }
+
+        .tab .tablinks:hover {
+            background-color: rgb(185, 184, 184);
+        }
+        .tab button.active {
+            background-color: rgb(149, 139, 139);
+        }
+        .tab button.active:hover {
+            background-color: rgb(149, 139, 139);
+        }
+
+
+        .tabcontent {
+            float: left;
+            width: 70%;
+            height: 300px;
+            padding: 0px 15px;
+            display: none;
+            border: 1px solid #ccc;
+            border-left: none;
+            position: relative;
+
+            /* Fade in Tabs  */
+            animation: fade 1s ease;
+        }
+
+        @keyframes fade {
+            from{ opacity: 0; }
+            to{ opacity: 1; }
+        }
+
+        .tabcontent span {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+
+</head>
+<body>
+
+
+    <!-- Tab Links  -->
+    <div class="tab">
+        <button id="default" class="tablinks" onclick="openCity( event, 'London')"> London </button>
+        <button class="tablinks" onclick="openCity( event, 'Paris')"> Paris </button>
+        <button class="tablinks" onclick="openCity( event, 'Tokyo')"> Tokyo </button>
+    </div>
+
+
+    <!-- Tab Content -->
+    <div id="London" class="tabcontent">
+        <h3> London </h3>
+        <p>London is a big city</p>
+        <span
+            onclick="this.parentElement.style.display='none'">
+            <img src="./1.svg" alt="">
+        </span>
+    </div>
+    <div id="Paris" class="tabcontent">
+        <h3> Paris </h3>
+        <p> Paris is a big city</p>
+        <span
+            onclick="this.parentElement.style.display='none'">
+            <img src="./1.svg" alt="">
+        </span>
+    </div>
+    <div id="Tokyo" class="tabcontent">
+        <h3> Tokyo </h3>
+        <p>Tokyo is a big city</p>
+        <span
+            onclick="this.parentElement.style.display='none'">
+            <img src="./1.svg" alt="">
+        </span>
+    </div>
+
+
+
+    <script defer>
+        // Show a tab by Default
+        document.getElementById('default').click()
+
+
+        function openCity(e, cityName) {
+            // console.log(e)
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName('tabcontent')
+            tablinks = document.getElementsByClassName('tablinks')
+
+
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = 'none'
+            }
+
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(' active', '')
+            }
+
+            document.getElementById(cityName).style.display = 'block'
+            e.target.className += ' active'
+        }
+    </script>
+
+</body>
+</html>

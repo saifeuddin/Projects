@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .cursor {
+            cursor: pointer;
+        }
+
+        .prev, .next {
+            text-decoration: none;
+            cursor: pointer;
+            position: absolute;
+            top: 40%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: yellow;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: white;
+            color: black;
+            font-weight: bold;
+        }
+
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* Container for image text */
+        .caption-container {
+            text-align: center;
+            background-color: #222;
+            padding: 15px 16px;
+            color: white;
+        }
+
+        .row::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        .column {
+            float: left;
+            width: 16.16%;
+        }
+
+
+        .demo {
+            opacity: 0.6;
+        }
+
+        .active,
+        .demo:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Container for the image galary -->
+    <div class="container">
+
+
+        <!-- Full with image with nu,mber text -->
+        <div class="mySlides">
+            <div class="numbertext"> 1 / 6</div>
+            <img src="../Sildeshow/img_mountains_wide.jpg" alt="Mountains" style="width: 100%;">
+        </div>
+        <div class="mySlides">
+            <div class="numbertext"> 2 / 6</div>
+            <img src="../Sildeshow/img_nature_wide.jpg" alt="Nature" style="width: 100%;">
+        </div>
+        <div class="mySlides">
+            <div class="numbertext"> 3 / 6</div>
+            <img src="../Sildeshow/img_snow_wide.jpg" alt="Snow" style="width: 100%;">
+        </div>
+        <div class="mySlides">
+            <div class="numbertext"> 4 / 6</div>
+            <img src="../Sildeshow/img_lights_wide.jpg" alt="lights" style="width: 100%;">
+        </div>
+        <div class="mySlides">
+            <div class="numbertext"> 5 / 6</div>
+            <img src="./img_woods_wide.jpg" alt="woods" style="width: 100%;">
+        </div>
+        <div class="mySlides">
+            <div class="numbertext"> 6 / 6</div>
+            <img src="./img_5terre_wide.jpg" alt="buildings" style="width: 100%;">
+        </div>
+
+
+        <!-- Next and Prevoius Buttons -->
+        <a href="#" class="prev" onclick="plusSlide(-1)">&#10094;</a>
+        <a href="#" class="next" onclick="plusSlide(1)">&#10095;</a>
+
+
+        <!-- Image Caption  -->
+        <div class="caption-container">
+            <div id="caption"></div>
+        </div>
+
+        <!-- Thumbnail Images -->
+        <div class="row">
+            <div class="column">
+                <img class="demo cursor" src="../Sildeshow/img_mountains_wide.jpg" alt="Mountains" style="width: 100%;" onclick="currentSlide(1)">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="../Sildeshow/img_nature_wide.jpg" alt="Nature" style="width: 100%;" onclick="currentSlide(2)">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="../Sildeshow/img_snow_wide.jpg" alt="Snow" style="width: 100%;" onclick="currentSlide(3)">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="../Sildeshow/img_lights_wide.jpg" alt="Lights" style="width: 100%;" onclick="currentSlide(4)">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="./img_woods_wide.jpg" alt="Woods" style="width: 100%;" onclick="currentSlide(5)">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="./img_5terre_wide.jpg" alt="Buildings" style="width: 100%;" onclick="currentSlide(6)">
+            </div>
+        </div>
+    </div>
+
+
+    <script defer>
+        var slideIndex = 1
+        showSlides(slideIndex)
+
+
+        function plusSlide(n) {
+            slideIndex += n
+            showSlides(slideIndex)
+        }
+        function currentSlide(n) {
+            slideIndex = n
+            showSlides(slideIndex)
+        }
+
+
+        function showSlides(n) {
+            var i
+            var slides = document.getElementsByClassName('mySlides')
+            var dots = document.getElementsByClassName('demo')
+            var caption = document.getElementById('caption')
+
+            if(n > slides.length) {
+                slideIndex = 1
+            }
+            if(n < 1) {
+                slideIndex = slides.length
+            }
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none'
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace (' active', '')
+            }
+
+            slides[slideIndex-1].style.display = 'block'
+            dots[slideIndex-1].className += ' active'
+            caption.innerText = dots[slideIndex-1].alt
+        }
+    </script>
+</body>
+</html>

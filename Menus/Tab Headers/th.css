@@ -1,0 +1,62 @@
+body, html{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.tablink {
+    background-color: rgb(199, 172, 172);
+    color: rgb(24, 16, 16);
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 50px;
+    text-align: center;
+    transition: .5s;
+    animation: fade 1s ;
+    -webkit-animation: fade 1s ;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    top  { opacity: 1; }
+}
+
+#London {
+    background-color: rgb(241, 119, 119);
+}
+
+#Paris {
+    background-color: green;
+}
+
+#Tokyo {
+    background-color: blue;
+}
+
+#Oslo {
+    background-color: orange;
+}

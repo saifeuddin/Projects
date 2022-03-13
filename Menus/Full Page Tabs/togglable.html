@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html, body{
+            height: 100%;
+            margin: 0;
+            border: 1px solid #000;
+        }
+
+        /* Style the tab buttons */
+        .tablink {
+            background-color: #555;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 19px;
+            width: 25%;
+        }
+
+
+        .tablink:hover {
+            background-color: #777;
+        }
+
+
+        .tabcontent {
+            color: white;
+            display: none;
+            padding: 110px;
+            text-align: center;
+            height: 100%;
+        }
+
+
+        /* Style each tab content individually */
+        #home {
+            background-color: rgb(170, 95, 95);
+        }
+
+        #news {
+            background-color: green;
+        }
+
+        #contact {
+            background-color: blue;
+        }
+
+        #about {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+
+
+<body>
+        <button class="tablink" onclick="openPage('home', this, 'rgb(170, 95, 95)') "> Hom</button>
+
+        <button class="tablink" onclick="openPage('news', this, 'green')" id="defaultOpen"> News</button>
+
+        <button class="tablink" onclick="openPage('contact', this, 'blue')"> Contact </button>
+
+        <button class="tablink" onclick="openPage('about', this, 'orange')"> About </button>
+
+
+
+        <div id="home" class="tabcontent">
+            <h3>Home </h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa, cupiditate?</p>
+        </div>
+        <div id="news" class="tabcontent">
+            <h3>News </h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa, cupiditate?</p>
+        </div>
+        <div id="contact" class="tabcontent">
+            <h3>Contact </h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa, cupiditate?</p>
+        </div>
+        <div id="about" class="tabcontent">
+            <h3>About </h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa, cupiditate?</p>
+        </div>
+
+
+
+
+    <script>
+        function openPage (pageName, element, color){
+            var i, tabcontent, tablinks;
+
+
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for(i = 0; i < tabcontent.length; i++){
+                tabcontent[i].style.display = "none";
+            }
+
+            tablinks = document.getElementsByClassName("tablink");
+            for(i = 0; i < tablinks.length; i++){
+                tablinks[i].style.backgroundColor = "";
+            }
+
+
+            document.getElementById(pageName).style.display = "block";
+
+            element.style.backgroundColor = color;
+        }
+
+        document.getElementById("defaultOpen").click();
+    </script>
+
+</body>
+</html>

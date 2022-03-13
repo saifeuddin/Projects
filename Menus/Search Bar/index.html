@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            padding: 30px;
+            border: 1px solid #000;
+            background-color: rgb(240, 217, 192);
+        }
+        #search {
+            width: 100%;
+            font-size: 18px;
+            padding: 11px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            margin-top: 5px;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 6px;
+            font-size: 17px;
+            background-color: aqua;
+        }
+        button:hover {
+            background-color: rgb(153, 117, 62);
+        }
+
+        #myMenu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #myMenu li a {
+            padding: 16px;
+            text-decoration: none;
+            color: black;
+            display: block;
+        }
+
+        #myMenu li a:hover {
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="search" placeholder="Search.." title="Type in a Category" onkeydown="myFunction(event)">
+        <ul id="myMenu">
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">JavaScript</a></li>
+            <li><a href="#">PHP</a></li>
+            <li><a href="#">Python</a></li>
+            <li><a href="#">jQuery</a></li>
+            <li><a href="#">SQL</a></li>
+            <li><a href="#">Bootstrap</a></li>
+            <li><a href="#">Node.js</a></li>
+        </ul>
+    </div>
+
+
+    <script defer>
+
+        window.addEventListener('onload', focus())
+
+        function focus() {
+            let input = document.getElementById('search')
+            input.focus()
+        }
+
+        function myFunction(e) {
+            console.log(e)
+
+            var input, filter, ul, li, a, i;
+            input = document.getElementById('search')
+            filter = input.value.toUpperCase()
+            ul = document.getElementById('myMenu')
+            li = ul.getElementsByTagName('li')
+
+
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName('a')[0]
+
+                if(a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = ''
+                } else {
+                    li[i].style.display = 'none'
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

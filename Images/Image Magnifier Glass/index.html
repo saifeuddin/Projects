@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title> Image Magnifier Glass </title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .img-magnifier-container {
+            position: relative;
+        }
+
+        #myimage {
+            border: 1px solid #000;
+        }
+
+        .img-magnifier-glass {
+            position: absolute;
+            border: 3px solid #000;
+            border-radius: 50%;
+            cursor: none;
+            width: 100px;
+            height: 100px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <h1>Image Magnifier Glass</h1>
+
+    <p>Mouse over the image:</p>
+
+    <div class="img-magnifier-container">
+        <img id="myimage"
+            src="https://www.w3schools.com/howto/img_girl.jpg"
+            width="600" height="400">
+    </div>
+
+    <p>
+        Feel free to change the strength of the
+        magnifier glass when initiating the
+        magnify function.
+    </p>
+
+    <script>
+        magnify("myimage", 3)
+
+
+        function magnify(imgID, zoom) {
+            var img, glass, w, h, bw
+
+            img = document.getElementById(imgID)
+            glass = document.createElement('div')
+            glass.setAttribute('class','img-magnifier-glass')
+            img.parentElement.insertBefore(glass, img)
+
+            glass.style.backgroundImage = `url('${img.src}')`
+            glass.style.backgroundRepeat = 'no-repeat'
+              glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+
+            glass.style.backgroundSize = `${img.width * zoom}px ${img.height * zoom}px`
+
+            console.log(`${img.width*zoom}px ${img.height*zoom}px`)
+
+            bw = 3
+            w = glass.offsetWidth / 2
+            h = glass.offsetHeight / 2
+            //
+            console.log(h, w)
+
+
+            glass.addEventListener('mousemove', moveMagnifier)
+            img.addEventListener('mousemove', moveMagnifier)
+
+
+            function moveMagnifier(e) {
+                var pos, x, y
+
+                e.preventDefault()
+                pos = getCursorPos(e)
+                console.log(pos)
+
+                x = pos.x
+                y = pos.y
+
+
+                if (x > img.width - (w / zoom)) {
+                    x = img.width - (w / zoom)
+                }
+                if (x < w / zoom) {
+                    x = w / zoom
+                }
+
+
+                if (y > img.height - (h / zoom)) {
+                    y = img.height - (h / zoom)
+                }
+                if (y < h / zoom) {
+                    y = h / zoom
+                }
+
+
+                glass.style.left = (x - w) + 'px'
+                glass.style.top = (y - h) + 'px'
+
+
+                glass.style.backgroundPosition = '-' + ((x * zoom) - w + bw) +"px -" + ((y * zoom) - h + bw) + 'px'
+
+
+                function getCursorPos(e) {
+                    var a, x=0, y=0
+                    e = e || window.event
+
+                    a = img.getBoundingClientRect()
+                    //
+                    console.warn(e, a)
+
+                    x = e.pageX - a.left
+                    y = e.pageY - a.top
+
+                    x = x - window.pageXOffset
+                    y = y - window.pageYOffset
+
+                    return { x: x, y: y }
+                }
+
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

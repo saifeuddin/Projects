@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .div {
+            padding: 10px;
+            border: 1px solid #000;
+        }
+
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            font-size: 20px;
+            transition: .4s;
+        }
+
+        .active,
+        .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .8s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div">
+        <button class="accordion"> Section
+            1</button>
+        <div class="panel">
+            <p>Lorem ipsum dolor sit, amet
+                consectetur adipisicing elit.
+                Tempora, quaerat?</p>
+        </div>
+
+        <button class="accordion"> Section
+            2</button>
+        <div class="panel">
+            <p>Lorem ipsum dolor sit, amet
+                consectetur adipisicing elit.
+                Tempora, quaerat?</p>
+        </div>
+
+        <button class="accordion"> Section
+            3</button>
+        <div class="panel">
+            <p>Lorem ipsum dolor sit, amet
+                consectetur adipisicing elit.
+                Tempora, quaerat?</p>
+        </div>
+    </div>
+
+
+
+    <script defer>
+        var accordion = document.getElementsByClassName('accordion')
+
+        var i
+
+        for (i = 0; i < accordion.length; i++) {
+            accordion[i].addEventListener('click', (e) => {
+
+                // Toggle between adding and removing "active" class
+                e.target.classList.toggle('active')
+
+
+                // Toggle between hiding and showing the active panel
+                var panel = e.target.nextElementSibling
+                console.log(panel.scrollHeight)
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + 'px'
+                }
+            })
+
+        }
+    </script>
+</body>
+
+</html>

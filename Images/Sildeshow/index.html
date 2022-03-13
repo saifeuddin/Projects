@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .slide-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        .myslide {
+            display: none;
+        }
+
+        .numbertext {
+            position: absolute;
+            top: 0;
+            padding: 8px 12px;
+            font-size: 12px;
+            color: #f2f2f2;
+        }
+
+        .text {
+            font-size: 15px;
+            color: #f2f2f2;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            transition: .6s ease;
+            user-select: none;
+            border-radius: 0 3px 3px 0;
+            border: 1px solid #000;
+            text-decoration: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            display: inline-block;
+            border-radius: 50%;
+            transition: background-color .6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+
+        .fade {
+            animation: fade 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="slide-container">
+        <div class="myslide fade">
+            <div class="numbertext">1/4</div>
+            <img src="img_nature_wide.jpg" alt=""
+                style="width: 100%;">
+            <div class="text">Caption One</div>
+        </div>
+        <div class="myslide fade">
+            <div class="numbertext">2/4</div>
+            <img src="img_snow_wide.jpg" alt=""
+                style="width: 100%;">
+            <div class="text">Caption Two</div>
+        </div>
+        <div class="myslide fade">
+            <div class="numbertext">3/4</div>
+            <img src="./img_mountains_wide.jpg"
+                alt="" style="width: 100%;">
+            <div class="text">Caption Three</div>
+        </div>
+        <div class="myslide fade">
+            <div class="numbertext">4/4</div>
+            <img src="./img_lights_wide.jpg" alt="" style="width: 100%;">
+            <div class="text">Caption Four</div>
+        </div>
+
+
+
+        <!-- <a href="#" class="prev"
+            onclick="plusSlides(-1)"> &#10094</a>
+        <a href="#" class="next"
+            onclick="plusSlides(1)"> &#10095</a> -->
+    </div>
+    <br>
+
+    <div style="text-align: center;">
+        <span class="dot"
+            onclick="currentSlide(1)"></span>
+        <span class="dot"
+            onclick="currentSlide(2)"></span>
+        <span class="dot"
+            onclick="currentSlide(3)"></span>
+        <span class="dot"
+            onclick="currentSlide(4)"></span>
+    </div>
+
+
+
+
+
+    <!-- <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next / previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("myslide");
+            var dots = document.getElementsByClassName("dot");
+            console.log(slides)
+
+
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+    </script> -->
+
+
+
+
+
+
+    <!-- Automatic Slides -->
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("myslide");
+            var dots = document.getElementsByClassName("dot");
+            console.log(slides)
+
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slideIndex++
+            if (slideIndex > slides.length) { slideIndex = 1 }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+
+            setTimeout(() => {
+                showSlides()
+            }, 2000);
+        }
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+
+</head>
+<body>
+
+    <div class="main">
+        <h1>Gallery with Filtering</h1>
+
+        <div class="myBtnContainer">
+            <button class="btn active"
+                onclick="filter('all')">Show
+                All</button>
+            <button class="btn"
+                onclick="filter('nature')">
+                Nature</button>
+            <button class="btn"
+                onclick="filter('cars')"> Cars
+            </button>
+            <button class="btn"
+                onclick="filter('people')"> People
+            </button>
+        </div>
+
+        <div class="row">
+            <div class="column nature">
+                <div class="content">
+                    <img src="../Sildeshow/img_mountains_wide.jpg"
+                        alt="Mountains"
+                        style="width: 100%;">
+                    <h4>Muntain</h4>
+                    <p>Lorem ipsum dolor sit amet.
+                    </p>
+                </div>
+            </div>
+            <div class="column nature">
+                <div class="content">
+                    <img src="../Sildeshow/img_lights_wide.jpg"
+                        alt="Lights"
+                        style="width: 100%;">
+                    <h4>Lights</h4>
+                    <p>Lorem ipsum dolor sit amet.
+                    </p>
+                </div>
+            </div>
+            <div class="column nature">
+                <div class="content">
+                    <img src="../Sildeshow/img_nature_wide.jpg"
+                        alt="Nature"
+                        style="width: 100%;">
+                    <h4>Nature</h4>
+                    <p>Lorem ipsum dolor sit amet.
+                    </p>
+                </div>
+            </div>
+
+
+
+            <div class="column cars">
+                <div class="content">
+                    <img src="./cars1.jpg"
+                        alt="cars"
+                        style="width: 100%;">
+                    <h4>Retro</h4>
+                    <p>Lorem ipsum dolor sit amet.
+                    </p>
+                </div>
+            </div>
+            <div class="column cars">
+                <div class="content">
+                    <img src="./cars2.jpg"
+                        alt="cars"
+                        style="width: 100%;">
+                    <h4>Fast</h4>
+                    <p>Lorem ipsum dolor sit amet.
+                    </p>
+                </div>
+            </div>
+            <div class="column cars">
+                <div class="content">
+                    <img src="./cars3.jpg"
+                        alt="cars"
+                        style="width: 100%;">
+                    <h4>Classic</h4>
+                    <p>Lorem ipsum dolor sit amet.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="column people">
+                <div class="content">
+                    <img src="people1.jpg"
+                        alt="Car"
+                        style="width:100%">
+                    <h4>Girl</h4>
+                    <p>Lorem ipsum dolor..</p>
+                </div>
+            </div>
+            <div class="column people">
+                <div class="content">
+                    <img src="people2.jpg"
+                        alt="Car"
+                        style="width:100%">
+                    <h4>Man</h4>
+                    <p>Lorem ipsum dolor..</p>
+                </div>
+            </div>
+            <div class="column people">
+                <div class="content">
+                    <img src="people3.jpg"
+                        alt="Car"
+                        style="width:100%">
+                    <h4>Woman</h4>
+                    <p>Lorem ipsum dolor..</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="./index.js" defer></script>
+
+
+</body>
+</html>
